@@ -33,21 +33,26 @@ class FirstPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Title"),
+        title: const Text("Title",style: TextStyle(fontWeight: FontWeight.w600),),
         centerTitle: true,
       ),
       body: Center(
-        child: ElevatedButton(
-          onPressed: () {
-            Navigator.of(context).push(
-              MaterialPageRoute(
-                builder: (BuildContext context) {
-                  return const SecondPage();
-                },
-              ),
-            );
-          },
-          child: const Text("Click"),
+        child: Column(
+          children: [
+            Image.network('https://media.istockphoto.com/id/1146517111/photo/taj-mahal-mausoleum-in-agra.jpg?s=612x612&w=0&k=20&c=vcIjhwUrNyjoKbGbAQ5sOcEzDUgOfCsm9ySmJ8gNeRk='),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (BuildContext context) {
+                      return const SecondPage();
+                    },
+                  ),
+                );
+              },
+              child: const Text("Click"),
+            ),
+          ],
         ),
       ),
       bottomNavigationBar: BottomNavigationBar(
